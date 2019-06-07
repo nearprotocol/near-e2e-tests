@@ -1,0 +1,11 @@
+{
+  "name": "near-e2e-tests",
+  "version": "0.0.1",
+  "description": "End-to-end tests for NEAR Protocol apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "MIT"
+}
