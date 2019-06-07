@@ -4,8 +4,13 @@
   "description": "End-to-end tests for NEAR Protocol apps",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nightwatch"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "geckodriver": "^1.16.2",
+    "nightwatch": "^1.1.11",
+    "ws": "^7.0.0"
+  }
 }
