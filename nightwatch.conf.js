@@ -4,7 +4,7 @@ module.exports = {
   ],
   test_runner: 'mocha',
   webdriver: {
-    start_process: false,
+    start_process: !getTestSettings().selenium_host,
     server_path: './node_modules/.bin/geckodriver',
     cli_args: [
       '--log',
