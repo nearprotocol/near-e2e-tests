@@ -1,0 +1,13 @@
+image: node:10
+
+variables:
+  NODE_ENV: ci
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - yarn
+    - yarn test
