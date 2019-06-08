@@ -4,7 +4,8 @@
   "description": "End-to-end tests for NEAR Protocol apps",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch"
+    "test": "env $(cat .env) nightwatch",
+    "test:ci": "env $(cat .env) ./run_ci.sh"
   },
   "author": "",
   "license": "MIT",
