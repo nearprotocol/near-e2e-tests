@@ -16,7 +16,12 @@
     "default" : {
       "desiredCapabilities": {
         "browserName" : "firefox",
-        "acceptInsecureCerts": true
+        "acceptInsecureCerts": true,
+        "alwaysMatch": {
+          "moz:firefoxOptions": {
+            "args": [ "-headless" ]
+          }
+        }
       }
     }
   }
