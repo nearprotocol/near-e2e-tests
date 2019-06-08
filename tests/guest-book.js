@@ -12,7 +12,7 @@ describe('NEAR Studio', function() {
       .waitForElementVisible('#near-guest-book', 5000)
       .assert.containsText('#near-guest-book', 'NEAR Guest Book')
       //.useXpath().waitForElementVisible('//*[contains(text(), "AssemblyScript compiler is ready!")]', 5000).useCss()
-      .pause(2000)
+      .pause(5000)
       .click('.button[title="Run Project: CtrlCmd + Enter"]')
       .windowHandles(({ value: handles }) => {
         const popup = handles[1];
