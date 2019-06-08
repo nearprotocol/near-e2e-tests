@@ -17,6 +17,11 @@ module.exports = {
   },
 }
 
+function exitWithError(message) {
+  console.error(message);
+  process.exit(1);
+}
+
 function getTestSettings() {
   switch (process.env.NODE_ENV) {
     case 'ci':
@@ -29,8 +34,8 @@ function getTestSettings() {
           enabled: false,
           path: '',
         },
-        username: process.env.SELENIUM_USERNAME,
-        access_key: process.env.SELENIUM_ACCESS_KEY,
+        username: process.env.SELENIUM_USERNAME || exitWithError('Please set SELENIUM_USERNAME env variable'),
+        access_key: process.env.SELENIUM_ACCESS_KEY || exitWithError('Please set SELENIUM_ACCESS_KEY env variable'),
         desiredCapabilities: {
           acceptSslCerts: '1',
           build: '1.0',
