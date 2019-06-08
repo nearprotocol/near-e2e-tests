@@ -10,7 +10,18 @@ describe('NEAR Studio', function() {
       .useXpath().click('//*[contains(text(), "NEAR Guest Book")]').useCss()
       .click('.button[title="Create"]')
       .waitForElementVisible('#near-guest-book', 5000)
-      .assert.containsText('#near-guest-book', 'NEAR Guest Book');
+      .assert.containsText('#near-guest-book', 'NEAR Guest Book')
+      //.useXpath().waitForElementVisible('//*[contains(text(), "AssemblyScript compiler is ready!")]', 5000).useCss()
+      .pause(2000)
+      .click('.button[title="Run Project: CtrlCmd + Enter"]')
+      .windowHandles(({ value: handles }) => {
+        const popup = handles[1];
+        client
+          .switchWindow(popup)
+          .waitForElementVisible('#login-button', 20000)
+          .assert.containsText('#login-button', 'Login with NEAR Wallet')
+          .end()
+      })
   });
 
   after(function(client, done) {
