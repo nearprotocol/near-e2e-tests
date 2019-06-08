@@ -15,7 +15,6 @@ describe('NEAR Studio', function() {
 
   after(function(client, done) {
     if (client.sessionId) {
-      require('fs').writeFileSync('testid.log', client.sessionId);
       client.end(function() {
         done();
       });
