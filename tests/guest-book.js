@@ -1,14 +1,16 @@
-describe('Github', function() {
+describe('NEAR Studio', function() {
   before(function(client, done) {
     done();
   });
 
-  it('Demo test GitHub', function (client) {
+  it('Can run guest book project', function (client) {
     client
-      .url('http://github.com/nightwatchjs/nightwatch')
-      .waitForElementVisible('body', 1000)
-      .waitForElementVisible('.container h1 strong a')
-      .assert.containsText('.container h1 strong a', 'nightwatch', 'Checking project title is set to nightwatch');
+      .url('https://studio.nearprotocol.com')
+      .waitForElementVisible('.modal-title-bar', 1000)
+      .useXpath().click('//*[contains(text(), "NEAR Guest Book")]').useCss()
+      .click('.button[title="Create"]')
+      .waitForElementVisible('#near-guest-book', 5000)
+      .assert.containsText('#near-guest-book', 'NEAR Guest Book');
   });
 
   after(function(client, done) {
