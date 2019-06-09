@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -exo pipefail
 if nightwatch; then
     cowsay GOOD JOB
