@@ -38,7 +38,7 @@ function getTestSettings() {
         access_key: process.env.SELENIUM_ACCESS_KEY || exitWithError('Please set SELENIUM_ACCESS_KEY env variable'),
         desiredCapabilities: {
           acceptSslCerts: '1',
-          build: '1.0',
+          build: process.env.SELENIUM_BUILD || 'default',
           javascriptEnabled: '1',
           name: 'NEAR Studio',
           record_network: 'true',
