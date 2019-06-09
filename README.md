@@ -29,5 +29,5 @@ NODE_ENV=ci yarn test:ci
 
 ## Useful links
 
-[GitLab project](https://gitlab.com/near-protocol/near-e2e-tests)
-[CBT results](https://app.crossbrowsertesting.com/selenium/results)
+- [GitLab project](https://gitlab.com/near-protocol/near-e2e-tests)
+- [CBT results](https://app.crossbrowsertesting.com/selenium/results)
