@@ -3,7 +3,7 @@ describe('NEAR Studio', function() {
     done();
   });
 
-  it('Can run guest book project', function (client) {
+  it('Can run guest book project', function (client, done) {
     client
       .url('https://studio.nearprotocol.com')
       .waitForElementVisible('.modal-title-bar', 1000)
@@ -20,15 +20,13 @@ describe('NEAR Studio', function() {
           .switchWindow(popup)
           .waitForElementVisible('#login-button', 20000)
           .assert.containsText('#login-button', 'Login with NEAR Wallet')
-          .end()
+          .end(done)
       })
   });
 
   after(function(client, done) {
     if (client.sessionId) {
-      client.end(function() {
-        done();
-      });
+      client.end(() => done());
     } else {
       done();
     }
