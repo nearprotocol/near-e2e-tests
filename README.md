@@ -1,5 +1,7 @@
 # near-e2e-tests
 
+![Build Status](https://gitlab.com/near-protocol/near-e2e-tests/badges/master/pipeline.svg)
+
 End-to-end tests for NEAR apps
 
 
