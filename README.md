@@ -23,6 +23,7 @@ ELENIUM_USERNAME=<username>
 SELENIUM_ACCESS_KEY=<password/access key>
 ```
 
+Run:
 ```
 NODE_ENV=ci yarn test:ci
 ```
